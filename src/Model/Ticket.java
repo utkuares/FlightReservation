@@ -1,15 +1,14 @@
 package Model;
 
 public class Ticket {
-
     private String ticketNumber;
-    private double fare;
     private Reservation reservation;
+    private SeatType seatType;
 
     public Ticket(String ticketNumber, double fare, Reservation reservation) {
         this.ticketNumber = ticketNumber;
-        this.fare = fare;
         this.reservation = reservation;
+        this.seatType = seatType;
     }
 
     public String getTicketNumber() {
@@ -21,11 +20,7 @@ public class Ticket {
     }
 
     public double getFare() {
-        return fare;
-    }
-
-    public void setFare(double fare) {
-        this.fare = fare;
+        return seatType.getPrice();
     }
 
     public Reservation getReservation() {
@@ -40,8 +35,8 @@ public class Ticket {
     public String toString() {
         return "Ticket{" +
                 "ticketNumber='" + ticketNumber + '\'' +
-                ", fare=" + fare +
-                ", reservation=" + reservation +
+                ", seatType=" + seatType +
+                ", fare=" + getFare() +
                 '}';
     }
 }
